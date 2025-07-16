@@ -12,7 +12,7 @@ class TelaInicial extends StatelessWidget {
         image: DecorationImage(
           opacity: 1.0,
           image: AssetImage('assets/fundoprincipal.png'), // Caminho da imagem
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.cover,
         ),
       ),
       child: LayoutBuilder(
@@ -22,8 +22,10 @@ class TelaInicial extends StatelessWidget {
 
           return Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
+
+                Image.asset("assets/icons/icon.png", width: tamanhoTela*0.65,),
               
                 Card(
                   color: Colors.green,
@@ -100,7 +102,7 @@ class TelaInicial extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 150),
+                const SizedBox(height: 150),
               ],
             ),
           );
