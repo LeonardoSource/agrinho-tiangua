@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'MeioAmbientePage.dart';
-import 'acoesPage.dart';
+//import 'acoesPage.dart';
 import 'telaInicial.dart';
 import 'play.dart';
+import 'JogodeReciclagem/jogo_reciclagem.dart';
 
 
 void main(){
@@ -49,6 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
     //const Acoes(),
     // 04 tela sobre o quiz jogos
     GridGame(),
+    ReciclaApp(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -66,9 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
       
           items: const [
             TabItem(icon: Image(image: AssetImage("assets/icons/inicio.png"), fit: BoxFit.contain,), title: 'Início', isIconBlend: true),
-            TabItem(icon: Image(image: AssetImage("assets/icons/meioambiente.png"), fit: BoxFit.contain,), title: 'Ambiente'),
+            TabItem(icon: Image(image: AssetImage("assets/icons/meioambiente.png"), fit: BoxFit.contain,), title: 'Aprenda'),
             //TabItem(icon: Image(image: AssetImage("assets/icons/acao.png"), fit: BoxFit.contain,), title: 'Ações'),
             TabItem(icon: Image(image: AssetImage("assets/icons/play.png"), fit: BoxFit.contain,), title: 'Jogos'),
+            TabItem(icon: Image(image: AssetImage("assets/icons/icon.png"), fit: BoxFit.contain,), title: 'Teste'),
           ],
       
           initialActiveIndex: _currentIndex, // Índice do item selecionado
