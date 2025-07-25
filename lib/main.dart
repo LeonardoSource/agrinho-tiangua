@@ -1,3 +1,4 @@
+import 'package:Agrinho_Arapa_Tiangua/boas_vindas.dart';
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'MeioAmbientePage.dart';
@@ -5,6 +6,7 @@ import 'MeioAmbientePage.dart';
 import 'telaInicial.dart';
 import 'play.dart';
 import 'JogodeReciclagem/jogo_reciclagem.dart';
+import 'boas_vindas.dart';
 
 
 void main(){
@@ -35,12 +37,23 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   int _currentIndex = 0;
+  bool fistTime = true;
 
-   
+  // Chamamos o showDialog após a construção inicial do widget.
+  // Usamos WidgetsBinding.instance.addPostFrameCallback para garantir
+  // que o contexto esteja disponível e a interface gráfica pronta.
+  @override
+  void initState() {
+
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BoasVindasAlert(context);
+    },);
+
+  }
+
    // Lista de telas que 
    //serão exibidas ao selecionar um item da barra de navegação
-
-
   final List<Widget> _pages = [
     // 01 tela home
     const TelaInicial(),
@@ -54,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
         

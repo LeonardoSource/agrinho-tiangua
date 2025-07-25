@@ -25,40 +25,16 @@ class TelaInicial extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
-                Image.asset("assets/icons/icon.png", width: tamanhoTela*0.65,),
+                // Logo do Projeto
+                Image.asset("assets/icons/icon.png", width: tamanhoTela*0.75,),
               
-                Card(
-                  color: Colors.green,
-                  elevation: 10, // Controle a intensidade da sombra
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'BEM VINDO',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 0.03 * maxHeight,
-                            color: Colors.white,
-                          ),
-                        ),
-  
-                      ],
-                    ),
-                  ),
-                ),
-                
                 // BOTAO SOBRE O AGRINHO
                 OutlinedButton(
                     style: OutlinedButton.styleFrom(
 
                       fixedSize: Size(tamanhoTela*0.8, 60),
                       side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
-                      backgroundColor: Colors.cyanAccent,
+                      backgroundColor: Color.fromARGB(255, 6, 98, 53),
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                       
                       shape: RoundedRectangleBorder(
@@ -66,14 +42,14 @@ class TelaInicial extends StatelessWidget {
 
                     )),
                     
-                    // Animacao quando o botao da pontuuacao é pressionado
+                    // Animacao quando o botao da pontuacao é pressionado
                     onPressed: () => Navigator.push(
                       context, 
                       MaterialPageRoute(builder: ((context) => InfoAgrinho()))),
                     
                     child: Text(
                     'Sobre o Agrinho',
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                   ),
                 const SizedBox(height: 10),
@@ -97,12 +73,12 @@ class TelaInicial extends StatelessWidget {
                       MaterialPageRoute(builder: ((context) => InfoCity()))),
                     
                     child: const Text(
-                    'Conheça Frecheirinha',
+                    'Conheça Tianguá',
                       style: TextStyle(color: Colors.black),
                     ),
                   ),
 
-                const SizedBox(height: 150),
+                //const SizedBox(height: 150),
               ],
             ),
           );
