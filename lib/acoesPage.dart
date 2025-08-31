@@ -22,7 +22,7 @@ class _AcoesState extends State<Acoes> {
               InAppWebView(
                 initialUrlRequest: URLRequest(
                                   url: WebUri.uri(
-                                    Uri.parse('https://agrinhofrecheirinha.blogspot.com/'),
+                                    Uri.parse('https://agrinhotiangua.wordpress.com/fotos/'),
                                   ),
                                 ),
                 
@@ -44,7 +44,7 @@ class _AcoesState extends State<Acoes> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircularProgressIndicator(),
-                        Text('Aguarde o carregamento da página'),
+                        Text('Aguarde conecção com a Internet....'),
                       ],
                     ),
                 ),

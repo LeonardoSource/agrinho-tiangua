@@ -2,11 +2,12 @@ import 'package:Agrinho_Arapa_Tiangua/boas_vindas.dart';
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'MeioAmbientePage.dart';
-//import 'acoesPage.dart';
+import 'acoesPage.dart';
 import 'telaInicial.dart';
 import 'play.dart';
-import 'JogodeReciclagem/jogo_reciclagem.dart';
+//import 'JogodeReciclagem/jogo_reciclagem.dart';
 import 'boas_vindas.dart';
+import 'preferencias.dart';
 
 
 void main(){
@@ -37,19 +38,19 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   int _currentIndex = 0;
-  bool fistTime = true;
+  AppPrefs firstTime = AppPrefs();
 
   // Chamamos o showDialog após a construção inicial do widget.
   // Usamos WidgetsBinding.instance.addPostFrameCallback para garantir
   // que o contexto esteja disponível e a interface gráfica pronta.
   @override
   void initState() {
-
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      BoasVindasAlert(context);
-    },);
-
+      if(firstTime.settings['first']==true){
+        super.initState();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          BoasVindasAlert(context);
+        },);
+    }
   }
 
    // Lista de telas que 
@@ -59,11 +60,11 @@ class _HomeScreenState extends State<HomeScreen> {
     const TelaInicial(),
     // 02 tela sobre saude
     const MeioAmbiente(),
-    // 03 tela sobre as acoes desenvolvidas
-    //const Acoes(),
+    // 03 tela com as acoes desenvolvidas
+    const Acoes(),
     // 04 tela sobre o quiz jogos
     GridGame(),
-    ReciclaApp(),
+    // ReciclaApp(),
   ];
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dev.dart';
 
 void BoasVindasAlert(BuildContext context){
     showDialog(
@@ -28,6 +29,28 @@ void BoasVindasAlert(BuildContext context){
               
               child: Text(
                 'OK',
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+
+                side: BorderSide(color: const Color.fromARGB(255, 5, 3, 3), width: 2),
+                backgroundColor: Colors.greenAccent,
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+
+              )),
+              
+
+               onPressed: () => Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: ((context) => InfoDev()))),
+              
+              child: Text(
+                'Sobre o desenvolvedor',
                 style: TextStyle(color: Colors.black),
               ),
             ),
