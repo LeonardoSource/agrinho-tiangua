@@ -82,11 +82,10 @@ class _HomeScreenState extends State<HomeScreen> {
           
       
           items: const [
-            TabItem(icon: Image(image: AssetImage("assets/icons/inicio.png"), fit: BoxFit.contain,), title: 'Início', isIconBlend: true),
+            TabItem(icon: Image(image: AssetImage("assets/icons/inicio.png"), fit: BoxFit.contain,), title: 'Início'),
             TabItem(icon: Image(image: AssetImage("assets/icons/meioambiente.png"), fit: BoxFit.contain,), title: 'Aprenda'),
-            //TabItem(icon: Image(image: AssetImage("assets/icons/acao.png"), fit: BoxFit.contain,), title: 'Ações'),
+            TabItem(icon: Image(image: AssetImage("assets/icons/acao.png"), fit: BoxFit.contain,), title: 'Ações'),
             TabItem(icon: Image(image: AssetImage("assets/icons/play.png"), fit: BoxFit.contain,), title: 'Jogos'),
-            TabItem(icon: Image(image: AssetImage("assets/icons/icon.png"), fit: BoxFit.contain,), title: 'Teste'),
           ],
       
           initialActiveIndex: _currentIndex, // Índice do item selecionado

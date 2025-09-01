@@ -9,7 +9,6 @@ class Acoes extends StatefulWidget {
 }
 
 class _AcoesState extends State<Acoes> {
-  bool _isLoading = true;
   @override
   Widget build(BuildContext context) { 
     return 
@@ -25,29 +24,12 @@ class _AcoesState extends State<Acoes> {
                                     Uri.parse('https://agrinhotiangua.wordpress.com/fotos/'),
                                   ),
                                 ),
-                
-                onLoadStart: (controller, url) {
-                  setState(() {
-                    _isLoading = true;
-                  });
-                },
-                onLoadStop: (controller, url) {
-                  setState(() {
-                    _isLoading = false;
-                  });
-                },
-              ),
-              if (_isLoading)
-                const Center(
-                  child: 
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CircularProgressIndicator(),
-                        Text('Aguarde conecção com a Internet....'),
-                      ],
-                    ),
+                initialSettings: InAppWebViewSettings(
+                  cacheEnabled: true,
+                  clearCache: false,
                 ),
+              ),
+              
             ],
           )
 

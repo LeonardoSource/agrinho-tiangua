@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'aboutfrecheirinha.dart';
+import 'abouttiangua.dart';
 import 'aboutagrinho.dart';
 
 class TelaInicial extends StatelessWidget {
@@ -26,13 +26,30 @@ class TelaInicial extends StatelessWidget {
               children: [
 
                 // Logo do Projeto
-                Image.asset("assets/icons/icon.png", width: tamanhoTela*0.75,),
-              
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset("assets/icons/icon.png", width: tamanhoTela*0.40,),
+                    Image.asset("assets/icons/cepon.png", width: tamanhoTela*0.40,)
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Text(
+                      'Centro Educacional Professor Osvaldo Nogueira Lima',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.black,
+                          backgroundColor: Colors.deepPurple,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          ),
+                ),
+                const SizedBox(height: 10),
                 // BOTAO SOBRE O AGRINHO
                 OutlinedButton(
                     style: OutlinedButton.styleFrom(
 
-                      fixedSize: Size(tamanhoTela*0.8, 60),
+                      fixedSize: Size(tamanhoTela*0.6, 50),
                       side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
                       backgroundColor: Color.fromARGB(255, 6, 98, 53),
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -53,11 +70,11 @@ class TelaInicial extends StatelessWidget {
                     ),
                   ),
                 const SizedBox(height: 10),
-                // BOTÃO CONHEÇA FRECHERINHA
+                // BOTÃO CONHEÇA TIANGUA
                 OutlinedButton(
                     style: OutlinedButton.styleFrom(
 
-                      fixedSize: Size(tamanhoTela*0.8, 60),
+                      fixedSize: Size(tamanhoTela*0.6, 50),
                       side: const BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
                       backgroundColor: Colors.yellowAccent,
                       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -67,7 +84,7 @@ class TelaInicial extends StatelessWidget {
 
                     )),
                     
-                    // Animacao quando o botao da pontuuacao é pressionado
+                    // Animacao quando o botao da pontuacao é pressionado
                     onPressed: () => Navigator.push(
                       context, 
                       MaterialPageRoute(builder: ((context) => InfoCity()))),
@@ -79,6 +96,7 @@ class TelaInicial extends StatelessWidget {
                   ),
 
                 //const SizedBox(height: 150),
+                
               ],
             ),
           );

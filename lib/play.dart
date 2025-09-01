@@ -25,6 +25,8 @@ import 'sustentabilidade.dart';
   ];
 
 class GridGame extends StatelessWidget {
+  const GridGame({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
