@@ -65,8 +65,8 @@ List<Map<String, dynamic>> alimentacao = [
 
 List<Map<String, dynamic>> reciclagem = [
     {
-    'question': 'Qual dos itens abaixo NÃO é geralmente reciclável?',
-    'answers': ['Plástico', 'Vidro', 'Papel', 'Guardanapos sujos'],
+    'question': 'Qual dos itens abaixo não é reciclável?',
+    'answers': ['Plástico', 'Pneu', 'Papel', 'Uva'],
     'correctIndex': 3,
   },
   {
@@ -91,8 +91,8 @@ List<Map<String, dynamic>> reciclagem = [
   },
   {
     'question': 'Qual dos seguintes materiais geralmente é reciclável?',
-    'answers': ['Papelão sujo', 'Papel limpo', 'Papel plastificado', 'Papel rasgado'],
-    'correctIndex': 1,
+    'answers': ['Papelão', 'Papel', 'Papel plastificado', 'Papel rasgado'],
+    'correctIndex': 2,
   },
   {
     'question': 'Por que a reciclagem é importante?',

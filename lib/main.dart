@@ -1,4 +1,4 @@
-import 'package:Agrinho_Arapa_Tiangua/boas_vindas.dart';
+import 'package:agrinho_arapa_tiangua/boas_vindas.dart';
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'MeioAmbientePage.dart';
@@ -6,11 +6,12 @@ import 'acoesPage.dart';
 import 'telaInicial.dart';
 import 'play.dart';
 //import 'JogodeReciclagem/jogo_reciclagem.dart';
-import 'boas_vindas.dart';
-import 'preferencias.dart';
+//import 'boas_vindas.dart';
+//import 'preferencias.dart';
+//import 'package:shared_preferences/shared_preferences.dart';
 
 
-void main(){
+void main () {
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -38,17 +39,24 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   int _currentIndex = 0;
-  AppPrefs firstTime = AppPrefs();
+  //final firstTime = Prefs();
+  int a = 1;
 
   // Chamamos o showDialog após a construção inicial do widget.
   // Usamos WidgetsBinding.instance.addPostFrameCallback para garantir
   // que o contexto esteja disponível e a interface gráfica pronta.
   @override
   void initState() {
-      if(firstTime.settings['first']==true){
+      /*if(firstTime.settings['first']==true){
         super.initState();
         WidgetsBinding.instance.addPostFrameCallback((_) {
           BoasVindasAlert(context);
+        },);*/
+      if(a==1){
+        super.initState();
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          BoasVindasAlert(context);
+          
         },);
     }
   }
@@ -68,7 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Scaffold(
         

@@ -72,32 +72,37 @@ class _InfoCityState extends State<InfoCity> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: FutureBuilder(
-        future: _checkAndLoad(),
-        builder: (context, snapshot) {
-          if (isOffline && localFilePath != null && File(localFilePath!).existsSync()) {
-            // Carrega versão salva
-            return InAppWebView(
-              initialFile: localFilePath!,
-            );
-          } else {
-            // Carrega online e salva tudo
-            return InAppWebView(
-              initialUrlRequest: URLRequest(
-                url: WebUri.uri(
-                  Uri.parse('https://agrinhotiangua.wordpress.com/tiangua/'),
+    return SafeArea(
+      child: Scaffold(
+        // PAra ter a opção de voltar
+        appBar: AppBar(),
+        // Corpo
+        body: FutureBuilder(
+          future: _checkAndLoad(),
+          builder: (context, snapshot) {
+            if (isOffline && localFilePath != null && File(localFilePath!).existsSync()) {
+              // Carrega versão salva
+              return InAppWebView(
+                initialFile: localFilePath!,
+              );
+            } else {
+              // Carrega online e salva tudo
+              return InAppWebView(
+                initialUrlRequest: URLRequest(
+                  url: WebUri.uri(
+                    Uri.parse('https://agrinhotiangua.wordpress.com/tiangua/'),
+                  ),
                 ),
-              ),
-              onLoadStop: (controller, url) async {
-                String? html = await controller.getHtml();
-                if (html != null) {
-                  await _saveHtmlWithResources(html);
-                }
-              },
-            );
-          }
-        },
+                onLoadStop: (controller, url) async {
+                  String? html = await controller.getHtml();
+                  if (html != null) {
+                    await _saveHtmlWithResources(html);
+                  }
+                },
+              );
+            }
+          },
+        ),
       ),
     );
   }

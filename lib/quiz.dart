@@ -1,4 +1,4 @@
-//import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
 class QuizApp extends StatefulWidget {
@@ -24,7 +24,7 @@ class _QuizAppState extends State<QuizApp> {
     }
   }
   
-  /*void playCorrect (){
+  void playCorrect (){
     final assetsAudioPlayer = AssetsAudioPlayer();
 
     assetsAudioPlayer.open(
@@ -55,13 +55,13 @@ class _QuizAppState extends State<QuizApp> {
         Audio("assets/songs/loop.mp3"),
     );
     assetsAudioPlayer.play();
-  }*/
+  }
   // Aqui e a funcao do alerta da pontuacao final
   void ExibePontuacao(BuildContext context, double score){
     showDialog(
       context: context, 
       builder: (context) {
-        //playFinal();
+        playFinal();
         return AlertDialog(
           title: Text('$score PONTOS!'),
           content: Text(nivel(score)),
@@ -114,19 +114,49 @@ class _QuizAppState extends State<QuizApp> {
     // zera a pontuacao assim que se exibe o total de pontos
     pontosMarcados = 0;
   }
+  void ShowPoints(BuildContext context, double score){
+      showDialog(
+        context: context, 
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Você tem $score PONTOS! Continue jogando'),
+            actions: [
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
 
+                  //side: BorderSide(color: const Color.fromARGB(255, 5, 3, 3), width: 2),
+                  backgroundColor: Colors.greenAccent,
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
 
+                )),
+                
+
+                onPressed: () => Navigator.of(context).pop(),
+                
+                child: Text(
+                  'OK',
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+            ],
+          );
+        }
+      );
+  }
   void _checkAnswer(int selectedIndex, BuildContext buttonContext) {
     if (selectedIndex == widget.categoria[_currentQuestionIndex]['correctIndex']) {
       // Resposta correta
       // chama som
-      //playCorrect();
+      playCorrect();
       setState(() {
         pontosMarcados = pontosMarcados + 10;
       });
     } else {
       // Resposta incorreta
-      //playWrong();
+      playWrong();
     }
 
     // Avançar para a próxima pergunta
@@ -169,7 +199,7 @@ class _QuizAppState extends State<QuizApp> {
                     style: OutlinedButton.styleFrom(
 
                       fixedSize: Size(tamanhoTela*0.4, 50),
-                      side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
+                      //side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
                       backgroundColor: const Color.fromARGB(255, 255, 82, 203),
                       //padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                       
@@ -192,7 +222,7 @@ class _QuizAppState extends State<QuizApp> {
                     style: OutlinedButton.styleFrom(
 
                       fixedSize: Size(tamanhoTela*0.4, 50),
-                      side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
+                      //side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
                       backgroundColor: Colors.yellowAccent,
                       //padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                       
@@ -201,9 +231,8 @@ class _QuizAppState extends State<QuizApp> {
 
                     )),
                     
-                    // Animacao quando o botao da pontuuacao é pressionado
-                    // SUBSTITUIR POR UM CHAMADA DE JANELA
-                    onPressed: () => print('Voce tem 10 pontos'),
+                    // Animacao quando o botao da pontuacao é pressionado
+                    onPressed: () => ShowPoints(context, pontosMarcados),
                     
                     child: Text(
                       pontosMarcados.toString() + " Pontos",
@@ -241,7 +270,7 @@ class _QuizAppState extends State<QuizApp> {
                             style: OutlinedButton.styleFrom(
 
                               fixedSize: Size(tamanhoTela, 50),
-                              side: BorderSide(color: const Color.fromARGB(255, 5, 3, 3), width: 2),
+                              //side: BorderSide(color: const Color.fromARGB(255, 5, 3, 3), width: 2),
                               backgroundColor: Colors.greenAccent,
                               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                               

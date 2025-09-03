@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'abouttiangua.dart';
+//import 'abouttiangua.dart';
 import 'aboutagrinho.dart';
+import 'dev.dart';
 
 class TelaInicial extends StatelessWidget {
   const TelaInicial({super.key});
@@ -17,56 +18,62 @@ class TelaInicial extends StatelessWidget {
       ),
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          final double maxHeight = constraints.maxHeight; // Altura máxima disponível
+          //final double maxHeight = constraints.maxHeight; // Altura máxima disponível
           double tamanhoTela = MediaQuery.of(context).size.width;
 
           return Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
 
                 // Logo do Projeto
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("assets/icons/icon.png", width: tamanhoTela*0.40,),
-                    Image.asset("assets/icons/cepon.png", width: tamanhoTela*0.40,)
-                  ],
+                Container(
+                  margin: EdgeInsets.only(top: 50),
+                  padding: EdgeInsets.only(top: 40),
+                  color: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/icons/icon.png", width: tamanhoTela*0.40,),
+                      Image.asset("assets/icons/cepon.png", width: tamanhoTela*0.40,)
+                    ],
+                  ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 15),
                 Text(
-                      'Centro Educacional Professor Osvaldo Nogueira Lima',
+                      'Centro Educacional Professor Osvaldo Nogueira Lima - Arapa - Tianguá',
                       textAlign: TextAlign.center,
                       style: TextStyle(
+                          height: 1,
                           color: Colors.black,
-                          backgroundColor: Colors.deepPurple,
-                          fontSize: 24,
+                          backgroundColor: const Color.fromRGBO(65 , 84, 158, 1),
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                           ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 50),
                 // BOTAO SOBRE O AGRINHO
                 OutlinedButton(
                     style: OutlinedButton.styleFrom(
 
                       fixedSize: Size(tamanhoTela*0.6, 50),
-                      side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
+                      //side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
                       backgroundColor: Color.fromARGB(255, 6, 98, 53),
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                       
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(5),
 
                     )),
                     
-                    // Animacao quando o botao da pontuacao é pressionado
+                    // quando o botao da pontuacao é pressionado
                     onPressed: () => Navigator.push(
                       context, 
                       MaterialPageRoute(builder: ((context) => InfoAgrinho()))),
                     
                     child: Text(
                     'Sobre o Agrinho',
-                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                   ),
                 const SizedBox(height: 10),
@@ -75,22 +82,22 @@ class TelaInicial extends StatelessWidget {
                     style: OutlinedButton.styleFrom(
 
                       fixedSize: Size(tamanhoTela*0.6, 50),
-                      side: const BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
-                      backgroundColor: Colors.yellowAccent,
+                      //side: const BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
+                      //backgroundColor: Colors.yellowAccent,
                       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                       
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(5),
 
                     )),
                     
-                    // Animacao quando o botao da pontuacao é pressionado
+                    // Animacao quando o botao da Tinagua é pressionado
                     onPressed: () => Navigator.push(
                       context, 
-                      MaterialPageRoute(builder: ((context) => InfoCity()))),
+                      MaterialPageRoute(builder: ((context) => InfoDev()))),
                     
                     child: const Text(
-                    'Conheça Tianguá',
+                    'Tianguá - CE',
                       style: TextStyle(color: Colors.black),
                     ),
                   ),

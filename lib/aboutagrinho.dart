@@ -4,9 +4,10 @@ class InfoAgrinho extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double tamanhoTela = MediaQuery.of(context).size.width;
     return Scaffold(
           appBar: AppBar(),
-            
+          
           body: Container(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -26,6 +27,14 @@ class InfoAgrinho extends StatelessWidget {
               Text("Despertar a conciência de cidadania nas crianças e jovens em fase escolar, tedno a Ética e a Sustentabilidade como linhas condutoras de abordagem",
               textAlign: TextAlign.justify,
               style: TextStyle(fontSize: 20)),
+
+              Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/icons/sobre.png", width: tamanhoTela*0.30,),
+                      Image.asset("assets/icons/cepon.png", width: tamanhoTela*0.40,)
+                    ],
+                  ),
 
             ],
           ),

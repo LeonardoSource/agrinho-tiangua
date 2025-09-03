@@ -32,7 +32,7 @@ class QuizGame extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Games do Agrinho"),
+          title: Text("Quiz do Agrinho"),
           centerTitle: true,
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,

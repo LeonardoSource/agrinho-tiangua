@@ -1,36 +1,16 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AppPrefs {
-  late SharedPreferences prefs;
-  // armazena minhas preferencias dentro de uma variavel do objeto
-  Map<String, bool> settings = {};
+class Prefs {
+  late SharedPreferences pref;
+  var a;
 
-  AppPrefs(){
-    _startSettings();
+  Prefs()  {
+    init();
   }
-
-  _startSettings() async {
-    await _startPreferences();
-  }
-
-  Future<void> _startPreferences() async {
-    prefs = await SharedPreferences.getInstance();
-    readFirst();
-    //await prefs.setBool('first', true);
-
-  }
-
-  // metodos para ser usados em outras implemtacoes
-  readFirst(){
-    final first = prefs.getBool('first') ?? true;
-    settings = {
-      'first' : first,
-    };
-  }
-
-  setFist (String first, bool yes) async{
-    await prefs.setBool(first, yes);
-    //readFirst();
+  init() async{
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setBool('key', false);
+    a = pref.getBool('key');
   }
 
 }
