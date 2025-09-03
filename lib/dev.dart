@@ -7,7 +7,7 @@ class InfoDev extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: AppBar(title: Text("Voltar"),),
       body: 
           
           Stack(
@@ -15,7 +15,7 @@ class InfoDev extends StatelessWidget {
               InAppWebView(
                 initialUrlRequest: URLRequest(
                                   url: WebUri.uri(
-                                    Uri.parse('https://agrinhotiangua.wordpress.com/fotos/'),
+                                    Uri.parse('https://leonardosource.github.io/sobre-mim/'),
                                   ),
                                 ),
                 initialSettings: InAppWebViewSettings(

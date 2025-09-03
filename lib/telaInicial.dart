@@ -97,7 +97,7 @@ class TelaInicial extends StatelessWidget {
                       MaterialPageRoute(builder: ((context) => InfoDev()))),
                     
                     child: const Text(
-                    'Tianguá - CE',
+                    'Sobre o Desenvolvedor',
                       style: TextStyle(color: Colors.black),
                     ),
                   ),

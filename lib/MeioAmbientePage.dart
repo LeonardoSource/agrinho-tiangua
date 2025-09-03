@@ -10,7 +10,7 @@ class MeioAmbiente extends StatefulWidget {
 }
 
 class _MeioAmbiente extends State<MeioAmbiente> {
-  bool _expanded = false;
+  //bool _expanded = false;
   // mapeamento ds pastas e tamanho da lisa de imagens
   Map<String, List<dynamic>> dicasList = {
       'Vida saudável': ['assets/saudavel/', 5]

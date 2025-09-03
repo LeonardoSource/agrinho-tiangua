@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // Chamamos o showDialog após a construção inicial do widget.
   // Usamos WidgetsBinding.instance.addPostFrameCallback para garantir
   // que o contexto esteja disponível e a interface gráfica pronta.
-  @override
+  /*@override
   void initState() {
       /*if(firstTime.settings['first']==true){
         super.initState();
@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
           
         },);
     }
-  }
+  }*/
 
    // Lista de telas que 
    //serão exibidas ao selecionar um item da barra de navegação
