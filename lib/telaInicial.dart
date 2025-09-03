@@ -59,7 +59,7 @@ class TelaInicial extends StatelessWidget {
                       fixedSize: Size(tamanhoTela*0.6, 50),
                       //side: BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
                       backgroundColor: Color.fromARGB(255, 6, 98, 53),
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      //padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                       
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
@@ -84,7 +84,7 @@ class TelaInicial extends StatelessWidget {
                       fixedSize: Size(tamanhoTela*0.6, 50),
                       //side: const BorderSide(color: Color.fromARGB(255, 0, 0, 0), width: 2),
                       //backgroundColor: Colors.yellowAccent,
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      //padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                       
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),

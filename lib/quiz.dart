@@ -1,4 +1,4 @@
-import 'package:assets_audio_player/assets_audio_player.dart';
+//import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
 class QuizApp extends StatefulWidget {
@@ -24,7 +24,7 @@ class _QuizAppState extends State<QuizApp> {
     }
   }
   
-  void playCorrect (){
+  /*void playCorrect (){
     final assetsAudioPlayer = AssetsAudioPlayer();
 
     assetsAudioPlayer.open(
@@ -55,13 +55,13 @@ class _QuizAppState extends State<QuizApp> {
         Audio("assets/songs/loop.mp3"),
     );
     assetsAudioPlayer.play();
-  }
+  }*/
   // Aqui e a funcao do alerta da pontuacao final
   void ExibePontuacao(BuildContext context, double score){
     showDialog(
       context: context, 
       builder: (context) {
-        playFinal();
+        //playFinal();
         return AlertDialog(
           title: Text('$score PONTOS!'),
           content: Text(nivel(score)),
@@ -150,13 +150,13 @@ class _QuizAppState extends State<QuizApp> {
     if (selectedIndex == widget.categoria[_currentQuestionIndex]['correctIndex']) {
       // Resposta correta
       // chama som
-      playCorrect();
+      //playCorrect();
       setState(() {
         pontosMarcados = pontosMarcados + 10;
       });
     } else {
       // Resposta incorreta
-      playWrong();
+      //playWrong();
     }
 
     // Avançar para a próxima pergunta
